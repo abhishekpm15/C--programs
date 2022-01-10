@@ -1,0 +1,46 @@
+INPUT:
+5
+2 6 4 76 1  
+
+OUTPUT:
+
+76 6 4 2 1 
+76 6 4 2 1 
+76 6 4 2 1 
+76 6 4 2 1
+
+CODE:
+
+#include <stdio.h>
+
+int main()
+{
+    int a;
+    scanf("%d",&a);
+    int position,swap;
+    int arr[a];
+    for(int i=0;i<a;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    for(int i=0;i<(a-1);i++){
+        position=i;
+        
+        for(int j=i+1;j<a;j++){
+            if(arr[position]<arr[j]){
+                position=j;
+            }
+        }
+        
+        if(position!=i){
+            swap=arr[i];
+            arr[i]=arr[position];
+            arr[position]=swap;
+        }
+    for(int i=0;i<a;i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+}
+    return 0;
+}
