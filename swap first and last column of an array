@@ -1,0 +1,44 @@
+You must implement the function swapFirstAndLastColumn which accepts two integers (R and C) and an integer matrix of size RxC as the input.
+The function must swap the first and last column of the matrix.
+
+Input:
+3 6
+4 9 8 2 1 1
+7 2 3 1 6 5
+6 7 5 4 2 9 
+
+Output:
+1 9 8 2 1 4
+5 2 3 1 6 7
+9 7 5 4 2 6
+
+CODE:
+
+#include<stdio.h> 
+#include <stdlib.h> 
+
+void swapFirstAndLastColumn(int r, int c, int matrix[r][c]){ 
+for(int j=0;j<c;j++){ 
+int temp=matrix[j][0]; 
+matrix[j][0]=matirx[j][c-1]; 
+matrix[j][c-1]=temp; 
+} 
+}
+
+int main() 
+{ int R, C; scanf("%d%d", &R, &C);
+int matrix[R][C]; 
+for(int row = 0; row < R; row++) { 
+for(int col = 0; col < C; col++) { 
+scanf("%d", &matrix[row][col]); 
+} 
+} 
+swapFirstAndLastColumn(R, C, matrix); 
+for(int row = 0; row < R; row++) { 
+for(int col = 0; col < C; col++) { 
+printf("%d ", matrix[row][col]); 
+} 
+printf("\n"); 
+} 
+return 0; 
+}
